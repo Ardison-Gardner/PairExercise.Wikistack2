@@ -25,7 +25,7 @@ router.get("/:userId", async (req, res, next) => {
     });
 
     res.send(userPages(user, pages));
-  } catch (error) { next(error) }
+  } catch (error) { next(error); }
 });
 
 module.exports = router;
