@@ -3,6 +3,8 @@ const layout = require("./layout");
 const marked = require('marked');
 
 module.exports = (page, author) => layout(html`
+  <h1>${page.title}</h1>
+  <p>${page.tags ? `Tags: ${page.tags}` : ''}</p>
   <h4>by <a href="/users/${author.id}">${author.name}</a></h4>
   <hr/>
   <div class="page-body">$${marked(page.content)}</div>
@@ -10,3 +12,4 @@ module.exports = (page, author) => layout(html`
   <a href="/wiki/${page.slug}/edit" class="btn btn-primary">edit this page</a>
   <a href="/wiki/${page.slug}/delete" class="btn btn-danger">delete this page</a>
 `);
+
