@@ -17,8 +17,7 @@ app.get('/', function (req, res, next) {
    res.redirect('/wiki/');
 });
 
-app.use((err, req, res, next) => {
-   console.error(err);
+app.use((req, res, next) => {
    res.status(404).send(notFoundPage());
 });
 
